@@ -12,17 +12,18 @@
     <title>RAL</title>
 </head>
 <body>
-    <h1 class="text-white bg-dark">Algoritmus nájdenia periódy v konečnom poli F(2)</h1>
+    <h1 class="text-white bg-dark">Algoritmus nájdenia najmenšej periódy v lineárne rekurentnej postupnosti v poli F(2)</h1>
     <main>
         <h5 class="font-weight-light">Zadajte dolné indexy <i>k<sub>i</sub></i> pre <i>i = 0,1,...</i> <br> v poradí zľava doprava, ako je zobrazené na ukážke:</h5>
         <img src="example2.png" alt="example">
+        <h6 class="font-weight-light" id="hint"><i>Napríklad pre <span id="example-equation">s<sub>n+3</sub> = s<sub>n+1</sub> + s<sub>n</sub></span> je vstup 3,1,0</i>.</h6>
         <div class="input-group mb-3 form-wrapper">
             <input type="text" id="input" class="form-control" placeholder="Oddeľujte čiarkami:" aria-describedby="button-addon2">
             <div class="input-group-append">
               <button onclick="startAlgorithm()" class="btn btn-outline-secondary" type="button" id="button-addon2">Spustiť algoritmus</button>
             </div>
         </div>
-        <p style="color: firebrick; display: none;" id="error">Nesprávny formát. Píšte v tvare napr. '9,4,2,5'</p>
+        <p style="color: firebrick; display: none;" id="error">Text</p>
     </main>
 
     <div id="calculations">

@@ -3,21 +3,53 @@ const fieldLimit = 2 //F(2)
 var htmlContentToAppend = '' 
 
 function startAlgorithm() {
+    //remove the calculation section on page if it exists already
     if(document.getElementById('calc-attr-wrapper') != null) {
         htmlContentToAppend = ''
         document.getElementById('calc-attr-wrapper').remove()
     }
+
     input = (document.getElementById('input').value)
+    let err = document.getElementById('error')
     reg = new RegExp('^[0-9]+(,[0-9]+)*$')
     console.log(input)
     if(reg.test(input)) {
-        console.log('g')
-        document.getElementById('error').style.display = 'none'
+        inputArr = input.split(',')
+        err.style.display = 'none'
+        if(input.substring(0,2) > 10) {
+            err.innerHTML = 'Prvý člen vstupu nemôže byť väčší ako 10.'
+            err.style.display = 'block'
+            return
+        }
+        if(input[input.length-1] != 0) {
+            err.innerHTML = 'Posledný člen musí byť nula.'
+            err.style.display = 'block'
+            return
+        }
+        if(input.length < 2) {
+            err.innerHTML = 'Dĺžka vstupu je príliš krátka. Zadajte aspoň dve čísla.'
+            err.style.display = 'block'
+            return
+        }
+        for(let i = 0; i < inputArr.length; i++) {
+            if(inputArr[i] < 0) {
+                err.innerHTML = 'Členy vstupu nesmú byť záporné.'
+                err.style.display = 'block'
+            }
+            console.log(inputArr[i], inputArr[i-1], parseInt(inputArr[i]) > parseInt(inputArr[i-1]))
+            if(parseInt(inputArr[i]) >= parseInt(inputArr[i-1]) && i > 0) {
+                err.innerHTML = 'Každý z členov vstupu musí byť menší, než predchádzajúci.'
+                err.style.display = 'block'
+                return
+            }
+        }
+        
         document.getElementById('calculations').style.display = 'block'
         generatePattern(input.split(','))
     }
 
     else {
+        err.innerHTML = "Nesprávny formát."
         document.getElementById('error').style.display = 'block'
     }
 }
