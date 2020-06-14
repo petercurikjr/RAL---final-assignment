@@ -8,3 +8,14 @@ You can try the algorithm on the [website](https://ral.netlify.app) (in Slovak) 
 
 #### Desktop app
 Written in Python with GUI library PyQT5. User interface remained unfinished, since the website implementation for the school subject's final assignment was sufficient.
+
+Made by Pavol Sobota
+- mathematical analysis
+- architecture of needed pseudo-algorithms
+- author of the final thesis
+
+and Peter Čuřík
+- implementation of given mathematical pseudo-algorithms
+  - Web app
+  - Desktop app
+- author of GUI design
