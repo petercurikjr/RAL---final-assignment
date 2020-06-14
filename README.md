@@ -3,7 +3,7 @@ This repository contains a program which, based on provided input, calculates sh
 
 You can also read the final thesis (the `pdf` file in root folder) for the whole mathematical and algorithmical insight.
 
-#### Website
+#### Web app
 You can try the algorithm on the [website](https://ral.netlify.app) (in Slovak) to see how it works.
 
 #### Desktop app
